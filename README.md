@@ -1,62 +1,63 @@
 # [PROJECT NAME]
 
-## Project Overview
+## 1. Project Overview
 **Author: Rachael**
 
 [Content here]
 
 ---
 
-## 🚀 Project Relevance
+## 2. Project Relevance
 **Author: Rachael**
 
 [Content here]
 
 ---
 
-## 🧠 Methodology
+## 3. Methodology
+**Author: Team**
 
-### Data Sample
+### 3.1 Data Sample
 **Author: Rachael**
 
 [Content here]
 
-### CyberChef
+### 3.2 CyberChef
 **Author: Komali**
 
 [Content here]
 
-### VirusTotal
+### 3.3 VirusTotal
 **Author: Komali**
 
 [Content here]
 
 ---
 
-## 🖥️ Development Environment
+## 4. Development Environment
 
-### VM Setup
+### 4.1 VM Setup
 **Author: David**
 
 [Content here]
 
 ---
 
-## 📊 Results
+## 5. Results
 
-### CyberChef
+### 5.1 CyberChef
 **Author: Komali**
 
 [Content here]
 
-### VirusTotal
+### 5.2 VirusTotal
 **Author: David**
 
 [Content here]
 
 ---
 
-## 📚 Documentation
+## 6. Documentation
 
 [Content here]
 
