@@ -16,11 +16,6 @@
 
 ## 🧠 Methodology
 
-### VM Setup
-**Author: David**
-
-[Content here]
-
 ### Data Sample
 **Author: Rachael**
 
