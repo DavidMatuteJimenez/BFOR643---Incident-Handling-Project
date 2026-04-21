@@ -41,7 +41,7 @@
 
 ## To Run This Project (Step-By-Step Guide)
 
-### Part 1: Download and Install UTM
+### 4.2 Download and Install UTM
 
 **Step 1:** Visit [https://mac.getutm.app/](https://mac.getutm.app/)
 
@@ -57,7 +57,7 @@
 
 ---
 
-### 4.2 Deploy Kali Linux on UTM
+### 4.3 Deploy Kali Linux on UTM
 
 **Step 7:** Follow Kali Linux's official UTM installation guide:
 [https://www.kali.org/docs/virtualization/install-utm-guest-vm/](https://www.kali.org/docs/virtualization/install-utm-guest-vm/)
@@ -70,7 +70,7 @@ This guide will walk you through:
 
 ---
 
-### 4.3 Setup and Configure Kali Linux
+### 4.4 Setup and Configure Kali Linux
 
 **Step 8:** Follow Kali Linux's installation and setup guide:
 [https://www.kali.org/docs/installation/hard-disk-install/](https://www.kali.org/docs/installation/hard-disk-install/)
@@ -84,7 +84,7 @@ This guide will walk you through:
 
 ---
 
-### 4.4: Login to Kali Linux
+### 4.5 Login to Kali Linux
 
 **Step 9:** At the Kali Linux login screen, enter:
 * **Username:** `kali`
@@ -94,7 +94,7 @@ This guide will walk you through:
 
 ---
 
-### 4.5: Use CyberChef and VirusTotal
+### 4.6 Use CyberChef and VirusTotal
 
 **Step 11:** Open a web browser in Kali Linux
 
