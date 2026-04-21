@@ -1,4 +1,4 @@
-# [PROJECT NAME]
+# Investigating Phishing Emails through CyberChef & VirusTotal
 
 ## 1. Project Overview
 **Author: Rachael**
