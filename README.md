@@ -36,7 +36,7 @@
 
 ## 4. Development Environment
 
-### 4.1 VM Setup
+### VM Setup
 **Author: David**
 
 ## To Run This Project (Step-By-Step Guide)
