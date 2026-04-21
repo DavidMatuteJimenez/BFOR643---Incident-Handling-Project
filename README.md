@@ -29,14 +29,21 @@ CyberChef is a tool used to analyze, decode and encode data. When we looked at t
 
 After opening: https://gchq.github.io/CyberChef/, a portion of the email was pasted into the input field. The content seemed like random characters and looked like it was encoded as Base64. "From Base64" is an operation that helped decode this encoded string, so it was dragged under recipes. After clicking the button "BAKE", it decoded the encoded string to reveal a malicious link which will be discussed in detail under "RESULTS" section.
 
+(give more details and images)
 
 
 ### 3.3 VirusTotal
 **Author: Komali**
 
-[Content here]
+VirusTotal is a cloud-based malware analysis platform that scans and verifies if any files/URLs/IP Addressses are flagged as malicious. It is very useful for analysis as it scans these against 80+ antivirus engines and provides a detailed report. 
 
----
+Indicators of Compromise (IOCs) such as IP Address, the link embedded into the encoded Base64 string were submitted to this tool. After scanning each IOC, there were 0 flags for any malicious content. However, it is important to use multiple tools to verify if any emails are malicious as there was email authenticaion failures when analyzing email headers.
+
+Multiple tools must be used together to determine if an email is malicious or not. Since this is a sample, VirusTotal did not flag any of the embedded links, but in real life, VirusTotal can be used to verify if any embedded content is malicious or not. 
+
+(give more details)
+
+
 
 ## 4. Development Environment
 
