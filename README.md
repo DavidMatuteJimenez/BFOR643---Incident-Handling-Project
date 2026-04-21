@@ -25,7 +25,11 @@
 ### 3.2 CyberChef
 **Author: Komali**
 
-[Content here]
+CyberChef is a tool used to analyze, decode and encode data. When we looked at the email sample, it stated that the file was encoded in Base64. This encoding is used to trasmit binary data over systems that only support text and is used to hide malicious URLs/ scripts from security tools. 
+
+After opening: https://gchq.github.io/CyberChef/, we pasted a portion of the email into the input field. The content seemed like random characters and looked like it was encoded as Base64. "From Base64" is an operation that helped decode this encoded string, so it was dragged under recipes. After clicking the button "BAKE", it decoded the encoded string to reveal a malicious link which will be discussed in detail under "RESULTS" section.
+
+
 
 ### 3.3 VirusTotal
 **Author: Komali**
