@@ -27,7 +27,7 @@
 
 `CyberChef` is a tool used to analyze, decode and encode data. When we looked at the email sample, it stated that the file was encoded in Base64. This encoding is used to trasmit binary data over systems that only support text and is used to hide malicious URLs/ scripts from security tools. 
 
-After opening: `https://gchq.github.io/CyberChef/`, a portion of the email was pasted into the input field. The content seemed like random characters and looked like it was encoded as Base64. `From Base64` is an operation that helped decode this encoded string, so it was dragged under recipes. After clicking the button `BAKE`, it decoded the encoded string to reveal a malicious link which will be discussed in detail under `RESULTS` section.
+After opening: [https://gchq.github.io/CyberChef/](https://gchq.github.io/CyberChef/), a portion of the email was pasted into the input field. The content seemed like random characters and looked like it was encoded as Base64. `From Base64` is an operation that helped decode this encoded string, so it was dragged under recipes. After clicking the button `BAKE`, it decoded the encoded string to reveal a malicious link which will be discussed in detail under `RESULTS` section.
 
 ### 3.3 VirusTotal
 **Author: Komali**
@@ -141,11 +141,15 @@ This URL does not seem to be related to Bradesco Bank (the bank it is claiming t
 <img width="1047" height="688" alt="Screenshot 2026-04-22 at 10 04 58 PM" src="https://github.com/user-attachments/assets/eabf5e5e-afbf-4dad-9b83-976b374557f9" />
 
 
+
+
 `IOC 1 - Suspicious IP Address`
 <img width="550" height="128" alt="width-550" src="https://github.com/user-attachments/assets/15a8008d-87ee-49de-b8ba-e4f5d5136f83" />
 
 IP Addresses reveal the location the email originates from and gives users insight into whether you can trust this sender.
 The IP Address listed is `137.184.34.4` and when we searched up this, it traces back to a cloud server in the San Jose area called `DigitalOcean,LLC`. This is suspicious as real banks don't send emails from random cloud servers from outside their country of origin. Since this email claims to be from Bradesco Bank, a bank in Brazil, it raises a red flag that the sender is traced back to California.
+
+
 
 
 `IOC 2 - Failed Email Authentications`
@@ -160,19 +164,24 @@ Email Authentication helps users understand and verify if they can even trust th
 `DMARC (Domain based Message Authentication Reporting and Conformance)` is a security protocol that uses both `SPF` and `DKIM` to verify the senders identity. Failed DMARC means this is likely a phishing attack.
 
 
+
+
 `IOC 3 - Sender Identity `
 <img width="873" height="403" alt="Screenshot 2026-04-22 at 10 25 05 PM" src="https://github.com/user-attachments/assets/1abdfd07-395c-4d9d-9fa8-e923536ca1d5" />
 
-Confirming if the sender identities match is a crucial step in verifying if the email is a phishing email or not. This can be done by checking who this email is coming from `From: BANCO DO BRADESCO LIVELO<banco.bradesco@atendimento.com.br>` 
-and the return path `Return-Path: root@ubuntu-s-1vcpu-1gb-35gb-intel-sfo3-06`.
+Confirming if the sender identities match is a crucial step in verifying if the email is a phishing email or not. This can be done by checking who this email is coming from `From: BANCO DO BRADESCO LIVELO<banco.bradesco@atendimento.com.br>` and the return path `Return-Path: root@ubuntu-s-1vcpu-1gb-35gb-intel-sfo3-06`.
 
 The first red flag here is that the return path does NOT match the sender domain at all. The second red flag is when we checked the official website of the back, the official domain of the bank is `@bradescobank.com` , not  `@atendimento.com.br`.
+
+
 
 
 `IOC 4 - Base64 Encoding`
 <img width="873" height="422" alt="Screenshot 2026-04-22 at 10 25 21 PM" src="https://github.com/user-attachments/assets/09afbefc-1839-44c3-9286-a23513953528" />
 
 `Base64` is a binary to text encoding scheme that turns binary data into a sequence of 64 ASCII (askey) characters. This encoding is used to transmit binary data over systems that only support text (such as email). This encoding is often used to transform code into a `Base64 format` to hide these malicious URLs/scripts from security tools.
+
+
 
 
 `CyberChef Decoded output`
@@ -185,15 +194,16 @@ After decoding the encoded string by using the T `From Base64` operation,it reve
 Embedded URLs are something to look out for as these can be very malicious if you accidentally open them. There is even the anchor text of `Clique aqui`, which prompts the user the click a button. 
 
 
+
+
 `Sample Email Layout`
 <img width="979" height="1606" alt="05002d64-4971-4ba8-aca0-c78b9238df4c" src="https://github.com/user-attachments/assets/e94c8d77-daa6-4c73-a234-e78a2f8bc417" />
 
 This sample email is what a user would potnetially see on their end of the screen when they received this email. This was generated using `ChatGPT` using the decoded Base64 content. This was done to visualize what a user would potentially see on their end when they received an email. This was generated purely for visualization puposes.
 
 
-This was the content pasted into ChatGPT to get generate this image (decoded content from the Base64 encoded string):
+Below is also a visualization of how the email would look (the decoded content from CyberChef was directly pasted below).
 
-`
 <!DOCTYPE html><html lang="en"><head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><body style="background-color:rgb(241, 241, 241);">
  
@@ -255,7 +265,7 @@ This was the content pasted into ChatGPT to get generate this image (decoded con
  </div>
  </body>
  </html>
- `
+ 
 
  
 
