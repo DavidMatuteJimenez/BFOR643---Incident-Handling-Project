@@ -159,7 +159,7 @@ Email Authentication helps users understand and verify if they can even trust th
 
 `DMARC (Domain based Message Authentication Reporting and Conformance)` is a security protocol that uses both `SPF` and `DKIM` to verify the senders identity. Failed DMARC means this is likely a phishing attack.
 
-'IOC 3 - Sender Identity `
+`IOC 3 - Sender Identity `
 <img width="873" height="403" alt="Screenshot 2026-04-22 at 10 25 05 PM" src="https://github.com/user-attachments/assets/1abdfd07-395c-4d9d-9fa8-e923536ca1d5" />
 
 Confirming if the sender identities match is a crucial step in verifying if the email is a phishing email or not. This can be done by checking who this email is coming from `From: BANCO DO BRADESCO LIVELO<banco.bradesco@atendimento.com.br>` 
@@ -170,8 +170,90 @@ The first red flag here is that the return path does NOT match the sender domain
 `IOC 4 - Base64 Encoding`
 <img width="873" height="422" alt="Screenshot 2026-04-22 at 10 25 21 PM" src="https://github.com/user-attachments/assets/09afbefc-1839-44c3-9286-a23513953528" />
 
+`Base64` is a binary to text encoding scheme that turns binary data into a sequence of 64 ASCII (askey) characters. This encoding is used to transmit binary data over systems that only support text (such as email). This encoding is often used to transform code into a `Base64 format` to hide these malicious URLs/scripts from security tools.
+
+
 `CyberChef Decoded output`
 <img width="1435" height="790" alt="Screenshot 2026-04-22 at 9 58 34 PM" src="https://github.com/user-attachments/assets/84996d9a-88d2-4ac9-bc85-75b72795aeac" />
+
+After decoding the encoded string by using the T `From Base64` operation,it revealed the malicious URL:
+
+` <a href="https://blog1seguimentmydomaine2bra.me/">Clique aqui</a></font> `
+
+Embedded URLs are something to look out for as these can be very malicious if you accidentally open them. There is even the anchor text of `Clique aqui`, which prompts the user the click a button. 
+(Click here) , seems to be very generic and suspicious.
+
+
+`Sample Email Layout`
+<img width="979" height="1606" alt="05002d64-4971-4ba8-aca0-c78b9238df4c" src="https://github.com/user-attachments/assets/e94c8d77-daa6-4c73-a234-e78a2f8bc417" />
+
+This sample email is what a user would potnetially see on their end of the screen when they received this email. This was generated using `ChatGPT` using the decoded Base64 content. This was done to visualize what a user would potentially see on their end when they received an email. This was generated purely for visualization puposes.
+
+
+This was the content pasted into ChatGPT to get generate this image (decoded content from the Base64 encoded string):
+`<!DOCTYPE html><html lang="en"><head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><body style="background-color:rgb(241, 241, 241);">
+ 
+ <p style="text-align:center;">
+ <font face="Arial" size="2">Para visualizar as imagens deste email. <a href="https://blog1seguimentmydomaine2bra.me/">Clique aqui</a></font>
+ </p>
+ 
+ 
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;500;700&amp;display=swap" rel="stylesheet">
+ <title>Pontos Livelo</title>
+ </head>
+ <body style="background-color:#eeeeee;">
+ <div id="bg" style="width: 602px; margin: 0 auto; padding: 15px;background-color: #fff;">
+ <div id="bg" style="width: 100%; margin: 0 auto; padding: 0px 15px 15px 15px; border: 2px solid #e50091;box-sizing: border-box;">
+ <div style="text-align: center; margin-bottom: 30px;">
+ <img src="header.png" alt="">
+ </div>
+ <div style="text-align: center;">
+ <img src="icone-superior.png" alt="">
+ </div>
+ <div style="text-align: center;">
+ <h1 style="font-family: 'Signika', sans-serif; font-weight: 700;color: #190f55;font-size: 26px;padding-top: 0px;margin-top: 0px;">Banco do Bradesco (Livelo). </h1>
+ </div>
+ <div>
+ <p style="font-family: 'Signika', sans-serif; font-weight: 300; color: #707070; font-size: 16px; line-height: 18px;">Você possui <strong style="color:#190f55;">Pontos Livelo com seu cartão Banco do Bradesco</strong> disponíveis para resgate que expiram HOJE, evite a perda destes pontos realizando agora mesmo o resgate da sua Pontuação Visa Infinite.</p>
+ </div>
+ <div style="margin-bottom:30px;">
+ <p style="font-family: 'Signika', sans-serif; font-weight: 300; color: #707070; font-size: 16px; line-height: 18px;">Você Clientes <strong style="color:#190f55;">Banco do Bradesco</strong> acumulam pontos livelo todas as vezes que utilizam seus cartões na função débito ou crédito, é rápido e fácil de acumular.</p>
+ </div>
+ 
+ <div style="background-color:#FF0080; border-radius:20px;margin-bottom: 40px;">
+ <table width="100%" cellspacing="0" cellpadding="0">
+ <tr>
+ <td width="60%" style="padding-left:20px;padding-top: 30px; padding-bottom: 30px;">
+ <p style="font-family: 'Signika', sans-serif; font-weight: 300; color: #ffff; font-size: 14px; line-height: 18px; margin:0px;padding:0px;"><span style="font-weight: 500;">Troque seus pontos por milhas aéreas</span> </p>
+ <p style="font-family: 'Signika', sans-serif; font-weight: 300; color: #ffff; font-size: 14px; line-height: 18px; margin:0px;padding:0px;"><span style="font-weight: 500;">Descontos de até 35% na fatura do cartão</span> </p>
+ <p style="font-family: 'Signika', sans-serif; font-weight: 300; color: #ffff; font-size: 14px; line-height: 18px; margin:0px;padding:0px;"><span style="font-weight: 500;"></span></p>
+ </td>
+ <td width="40%" style="padding-right:20px;">
+ <div style="border-left: 1px solid #fff; padding-left:40px;padding-top: 0px;padding-bottom: 0px;">
+ <h2 style="font-family: 'Signika', sans-serif; font-weight: 700;color: #fff;font-size: 36px;padding: 0px;margin: 0px;">92.990</h2>
+ <p style="font-family: 'Signika', sans-serif; font-weight: 300;color: #fff;font-size: 10px;padding: 0px;margin: 0px;">MIL PONTOS ACUMULADOS EXPIRAM HOJE</p>
+ </div>
+ </td>
+ </tr>
+ </table>
+ </div>
+ <div style="text-align: center;margin-bottom: 70px;">
+ <a style="padding:10px 40px;border-radius:20px;text-decoration: none;color: #fff;font-family: 'Signika', sans-serif; font-weight: 500;font-size: 16px;background: linear-gradient(to top,#FF0080,#00b5fc);background-color: #FF0080;" href="https://blog1seguimentmydomaine2bra.me/">Resgatar Agora</a>
+ </div>
+ 
+ <div>
+ <p style="font-family: 'Signika', sans-serif; font-weight: 300; color: #707070; font-size: 12px; line-height: 18px;"><img src="icone-rodape.png" style="float: left;;" alt="">Resgate agora mesmo antes que eles expirem! Aproveite, Troque seus pontos por milhas aereas, Descontos de ate 35% no cartão ou milhares de premios em nosso Catalogo.</p>
+ </div>
+ </div>
+ </div>
+ </body>
+ </html>`
+
+ 
 
 `Live Demo`
 https://github.com/user-attachments/assets/ebff0b2f-9bfb-4dba-883c-17d84022fa9f
