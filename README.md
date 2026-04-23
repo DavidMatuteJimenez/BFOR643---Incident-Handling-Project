@@ -133,7 +133,7 @@ This URL does not seem to be related to Bradesco Bank (the bank it is claiming t
 
 [Content here]
 
----
+---<img width="507" height="320" alt="image" src="https://github.com/user-attachments/assets/50c4f5d2-8baa-476d-bc0b-4a9c5a68ec47" />
 
 ## 6. Documentation
 
