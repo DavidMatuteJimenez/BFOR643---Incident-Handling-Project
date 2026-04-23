@@ -296,7 +296,26 @@ Please **DO NOT** click any links below *
 `Live Demo`
 https://github.com/user-attachments/assets/ebff0b2f-9bfb-4dba-883c-17d84022fa9f
 
+`IOC 1 - URL Reputation Analysis`
+<img width="1435" height="790" alt="VirusTotal URL Scan" src="https://github.com/user-attachments/assets/ccee722e-584d-4033-a25e-c6474a89df11" />
 
+While VirusTotal's URL scanner showed 0 detections, this result reveals a critical vulnerability in relying solely on signature-based detection. Newly registered phishing domains typically bypass antivirus engines for the first 24-48 hours. The absence of flags does not indicate safety—it indicates the domain is too new or too obscure for traditional malware databases. Analysts must correlate URL analysis with domain registration age, WHOIS data, and SSL certificate details to identify malicious intent.
+
+
+
+
+`IOC 2 - IP Geolocation and Infrastructure Analysis`
+<img width="1435" height="790" alt="VirusTotal IP Address Scan" src="https://github.com/user-attachments/assets/0c5808b2-781b-47f4-b930-0d244acbb06b" />
+
+VirusTotal's IP reputation lookup identified the hosting provider (DigitalOcean) and geographic location (California). This metadata is invaluable for threat analysis—legitimate financial institutions maintain dedicated email servers in their country of origin, not on shared cloud infrastructure. The 0 malware detection flag misses the behavioral red flag: a Brazilian bank sending emails from a US-based cloud provider is inherently suspicious. This case demonstrates that infrastructure analysis often reveals phishing intent before malware detection engines catch it.
+
+
+
+
+`IOC 3 - Domain Infrastructure and Hosting Assessment`
+<img width="1435" height="790" alt="VirusTotal Domain Scan" src="https://github.com/user-attachments/assets/ea57a60e-f7bd-4756-b8e2-276db9f5d8ad" />
+
+The domain scan provides critical hosting and DNS resolution data. Even with 0 detections across all engines, the domain's deceptive naming convention (`blog1seguimentmydomaine2bra.me`) and use of a suspicious top-level domain (`.me` instead of `.com` or `.br`) are indicators of compromise. VirusTotal's infrastructure data—including nameservers, IP addresses, and hosting history—allows analysts to identify patterns consistent with phishing infrastructure, even when the domain has not yet been formally blacklisted.
 
 ---
 
