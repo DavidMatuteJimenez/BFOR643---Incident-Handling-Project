@@ -41,10 +41,6 @@ Indicators of Compromise (IOCs) such as IP Address, the link embedded into the e
 
 Multiple tools must be used together to determine if an email is malicious or not. Since this is a sample, VirusTotal did not flag any of the embedded links, but in real life, VirusTotal can be used to verify if any embedded content is malicious or not. 
 
-(give more details)
-
-
-
 ## 4. Development Environment
 
 ### VM Setup
@@ -130,7 +126,8 @@ Using CyberChef, the Base64 string was analyzed and decoded. The encoded string 
 
 ` <a href="https://blog1seguimentmydomaine2bra.me/">Clique aqui</a></font> `
 
-This URL does not seem to be related to Bradesco Bank (the bank it is claiming to be) and the anchor text of `Clique aqui (Click here)` , seems to be very generic and suspicious.
+This URL does not seem to be related to Bradesco Bank (the bank it is claiming to be) and the anchor text of `Clique aqui`
+(Click here) , seems to be very generic and suspicious.
 
 <img width="1435" height="790" alt="Screenshot 2026-04-22 at 9 58 34 PM" src="https://github.com/user-attachments/assets/26c8943a-889e-4a0a-8802-3d894c2bc896" />
 
@@ -142,18 +139,33 @@ This URL does not seem to be related to Bradesco Bank (the bank it is claiming t
 ---
 
 ## 6. Documentation
-'GitHub Sample`
+`GitHub Sample`
 <img width="1047" height="688" alt="Screenshot 2026-04-22 at 10 04 58 PM" src="https://github.com/user-attachments/assets/eabf5e5e-afbf-4dad-9b83-976b374557f9" />
 
 `IOC 1 - Suspicious IP Address`
 <img width="550" height="128" alt="width-550" src="https://github.com/user-attachments/assets/15a8008d-87ee-49de-b8ba-e4f5d5136f83" />
 
+IP Addresses reveal the location the email originates from and gives users insight into whether you can trust this sender.
+The IP Address listed is `137.184.34.4` and when we searched up this, it traces back to a cloud server in the San Jose area called `DigitalOcean,LLC`. This is suspicious as real banks don't send emails from random cloud servers from outside their country of origin. Since this email claims to be from Bradesco Bank, a bank in Brazil, it raises a red flag that the sender is traced back to California.
 
 `IOC 2 - Failed Email Authentications`
 <img width="918" height="431" alt="Screenshot 2026-04-22 at 10 24 25 PM" src="https://github.com/user-attachments/assets/594e59e4-465e-4c2a-b1f5-9a6416c50d39" />
 
+Email Authentication helps users understand and verify if they can even trust the sender of the email. There are a few email authentication protocols that should be passed, if the sender is valid. These protocols include `SPF`, `DKIM`and `DMARC` and work together to prevent any spoofing or phishing.
+
+`SPF (Sender Policy Framework)` checks to see if the sender is using any of the authorized IP Addresses established by the domain owner.  When this fails it means the sender is not authorized to send the email on behalf of the domain. 
+
+`DKIM (DomainKeys Identified Mail)` is a digital signature to the email that makes sure the email hasn’t been altered. Failed DKIMs are one of the reasons why emails are marked as spam and the sender is probably not who they claim to be.
+
+`DMARC (Domain based Message Authentication Reporting and Conformance)` is a security protocol that uses both `SPF` and `DKIM` to verify the senders identity. Failed DMARC means this is likely a phishing attack.
+
 'IOC 3 - Sender Identity `
 <img width="873" height="403" alt="Screenshot 2026-04-22 at 10 25 05 PM" src="https://github.com/user-attachments/assets/1abdfd07-395c-4d9d-9fa8-e923536ca1d5" />
+
+Confirming if the sender identities match is a crucial step in verifying if the email is a phishing email or not. This can be done by checking who this email is coming from `From: BANCO DO BRADESCO LIVELO<banco.bradesco@atendimento.com.br>` 
+and the return path `Return-Path: root@ubuntu-s-1vcpu-1gb-35gb-intel-sfo3-06`.
+
+The first red flag here is that the return path does NOT match the sender domain at all. The second red flag is when we checked the official website of the back, the official domain of the bank is `@bradescobank.com` , not  `@atendimento.com.br`.
 
 `IOC 4 - Base64 Encoding`
 <img width="873" height="422" alt="Screenshot 2026-04-22 at 10 25 21 PM" src="https://github.com/user-attachments/assets/09afbefc-1839-44c3-9286-a23513953528" />
