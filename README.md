@@ -123,8 +123,15 @@ This guide will walk you through:
 
 ### 5.1 CyberChef
 **Author: Komali**
+The portion of the email has content encoded in Base64 which converts data into 64 ASCII characters. Base64 encoding itself is not malicious but it is commonly used to embedded malicious scripts/URLs into the final string to bypass security tools.
 
-[Content here]
+Using CyberChef, the Base64 string was analyzed and decoded. The encoded string was pasted into the input field and "From Base64" operation was applied to the recipes. After hitting the button "BAKE", it decoded the string and revealed the malicious URL:
+
+<a href="https://blog1seguimentmydomaine2bra.me/">Clique aqui</a></font>
+
+This URL does not seem to be related to Bradesco Bank (the bank it is claiming to be) and the anchor text of "Clique aqui" (Click here) , seems to be very generic and suspicious.
+
+<img width="1435" height="790" alt="Screenshot 2026-04-22 at 9 58 34 PM" src="https://github.com/user-attachments/assets/26c8943a-889e-4a0a-8802-3d894c2bc896" />
 
 ### 5.2 VirusTotal
 **Author: David**
