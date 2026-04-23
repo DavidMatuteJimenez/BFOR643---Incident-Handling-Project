@@ -136,7 +136,7 @@ This URL does not seem to be related to Bradesco Bank (the bank it is claiming t
 For this phishing investigation, three primary IOCs were submitted to VirusTotal for analysis:
 
 `IOC 1 - URL Scanned`
-<img width="507" height="320" alt="image" src="https://github.com/user-attachments/assets/ccee722e-584d-4033-a25e-c6474a89df11" />
+<img width="1435" height="790" alt="image" src="https://github.com/user-attachments/assets/ccee722e-584d-4033-a25e-c6474a89df11" />
 
 The malicious URL decoded from the Base64 string (`https://blog1seguimentmydomaine2bra.me/`) was submitted to VirusTotal for analysis. This URL returned 0 detections across all antivirus engines, indicating it was either newly registered or not yet flagged by security vendors at the time of scanning.
 
