@@ -131,9 +131,26 @@ This URL does not seem to be related to Bradesco Bank (the bank it is claiming t
 ### 5.2 VirusTotal
 **Author: David**
 
-[Content here]
+`VirusTotal` is a cloud-based malware analysis platform that aggregates detection data from 80+ antivirus engines, URL/domain blacklists, and IP reputation databases. By submitting Indicators of Compromise (IOCs) such as URLs, domains, and IP addresses, analysts can quickly determine if they have been flagged as malicious by multiple security vendors.
 
----<img width="507" height="320" alt="image" src="https://github.com/user-attachments/assets/50c4f5d2-8baa-476d-bc0b-4a9c5a68ec47" />
+For this phishing investigation, three primary IOCs were submitted to VirusTotal for analysis:
+
+`IOC 1 - URL Scanned`
+<img width="1435" height="790" alt="URL VirusTotal Scan" src="[INSERT_IMAGE_URL_HERE]" />
+
+The malicious URL decoded from the Base64 string (`https://blog1seguimentmydomaine2bra.me/`) was submitted to VirusTotal for analysis. This URL returned 0 detections across all antivirus engines, indicating it was either newly registered or not yet flagged by security vendors at the time of scanning.
+
+`IOC 2 - IP Address Scanned`
+<img width="1435" height="790" alt="IP VirusTotal Scan" src="[INSERT_IMAGE_URL_HERE]" />
+
+The originating IP address (`137.184.34.4`) extracted from the email headers was scanned through VirusTotal. This IP traces back to DigitalOcean, LLC, a cloud hosting provider in San Jose, California. The scan revealed 0 malware detections, but the geographic mismatch (email claims to be from a Brazilian bank but originates from California) is a significant red flag for phishing.
+
+`IOC 3 - Domain Scanned`
+<img width="1435" height="790" alt="Domain VirusTotal Scan" src="[INSERT_IMAGE_URL_HERE]" />
+
+The suspicious domain (`blog1seguimentmydomaine2bra.me`) was submitted for analysis. VirusTotal returned 0 flags across all indicators, demonstrating why multiple analysis tools must be used in conjunction. A domain may not be flagged as malicious by traditional antivirus engines, but other indicators—such as email authentication failures, domain registration details, and sender mismatches—reveal its malicious intent.
+
+**Key Finding:** While VirusTotal did not flag any of the IOCs as malicious, this emphasizes the importance of using a multi-layered approach to threat analysis. Traditional malware detection engines may miss sophisticated phishing attacks that leverage newly registered domains and cloud infrastructure. Email authentication analysis (SPF/DKIM/DMARC failures) and sender verification remain critical in identifying phishing emails that evade signature-based detection.
 
 ## 6. Documentation
 
