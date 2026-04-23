@@ -142,8 +142,29 @@ This URL does not seem to be related to Bradesco Bank (the bank it is claiming t
 ---
 
 ## 6. Documentation
+'GitHub Sample`
+<img width="1047" height="688" alt="Screenshot 2026-04-22 at 10 04 58 PM" src="https://github.com/user-attachments/assets/eabf5e5e-afbf-4dad-9b83-976b374557f9" />
 
-[Content here]
+`IOC 1 - Suspicious IP Address`
+<img width="550" height="128" alt="width-550" src="https://github.com/user-attachments/assets/15a8008d-87ee-49de-b8ba-e4f5d5136f83" />
+
+
+`IOC 2 - Failed Email Authentications`
+<img width="918" height="431" alt="Screenshot 2026-04-22 at 10 24 25 PM" src="https://github.com/user-attachments/assets/594e59e4-465e-4c2a-b1f5-9a6416c50d39" />
+
+'IOC 3 - Sender Identity `
+<img width="873" height="403" alt="Screenshot 2026-04-22 at 10 25 05 PM" src="https://github.com/user-attachments/assets/1abdfd07-395c-4d9d-9fa8-e923536ca1d5" />
+
+`IOC 4 - Base64 Encoding`
+<img width="873" height="422" alt="Screenshot 2026-04-22 at 10 25 21 PM" src="https://github.com/user-attachments/assets/09afbefc-1839-44c3-9286-a23513953528" />
+
+`CyberChef Decoded output`
+<img width="1435" height="790" alt="Screenshot 2026-04-22 at 9 58 34 PM" src="https://github.com/user-attachments/assets/84996d9a-88d2-4ac9-bc85-75b72795aeac" />
+
+`Live Demo`
+https://github.com/user-attachments/assets/ebff0b2f-9bfb-4dba-883c-17d84022fa9f
+
+
 
 ---
 
