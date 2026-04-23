@@ -141,12 +141,12 @@ For this phishing investigation, three primary IOCs were submitted to VirusTotal
 The malicious URL decoded from the Base64 string (`https://blog1seguimentmydomaine2bra.me/`) was submitted to VirusTotal for analysis. This URL returned 0 detections across all antivirus engines, indicating it was either newly registered or not yet flagged by security vendors at the time of scanning.
 
 `IOC 2 - IP Address Scanned`
-<img width="502" height="317" alt="image" src="https://github.com/user-attachments/assets/0c5808b2-781b-47f4-b930-0d244acbb06b" />
+<img width="1435" height="790" alt="image" src="https://github.com/user-attachments/assets/0c5808b2-781b-47f4-b930-0d244acbb06b" />
 
 The originating IP address (`137.184.34.4`) extracted from the email headers was scanned through VirusTotal. This IP traces back to DigitalOcean, LLC, a cloud hosting provider in San Jose, California. The scan revealed 0 malware detections, but the geographic mismatch (email claims to be from a Brazilian bank but originates from California) is a significant red flag for phishing.
 
 `IOC 3 - Domain Scanned`
-<img width="490" height="309" alt="image" src="https://github.com/user-attachments/assets/ea57a60e-f7bd-4756-b8e2-276db9f5d8ad" />
+<img width="1435" height="790" alt="image" src="https://github.com/user-attachments/assets/ea57a60e-f7bd-4756-b8e2-276db9f5d8ad" />
 
 The suspicious domain (`blog1seguimentmydomaine2bra.me`) was submitted for analysis. VirusTotal returned 0 flags across all indicators, demonstrating why multiple analysis tools must be used in conjunction. A domain may not be flagged as malicious by traditional antivirus engines, but other indicators—such as email authentication failures, domain registration details, and sender mismatches—reveal its malicious intent.
 
