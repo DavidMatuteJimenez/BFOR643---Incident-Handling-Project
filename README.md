@@ -203,12 +203,13 @@ This sample email is what a user would potnetially see on their end of the scree
 
 
 Below is also a visualization of how the email would look (the decoded content from CyberChef was directly pasted below).
+* Please **DO NOT** click any links below *
 
 <!DOCTYPE html><html lang="en"><head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><body style="background-color:rgb(241, 241, 241);">
  
  <p style="text-align:center;">
- <font face="Arial" size="2">Para visualizar as imagens deste email. <a href="https://blog1seguimentmydomaine2bra.me/"`>Clique aqui</a>`</font>
+ <font face="Arial" size="2">Para visualizar as imagens deste email.` <a href="https://blog1seguimentmydomaine2bra.me/">Clique aqui</a>`</font>
  </p>
  
  
