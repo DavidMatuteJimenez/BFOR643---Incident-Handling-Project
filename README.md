@@ -25,19 +25,16 @@
 ### 3.2 CyberChef
 **Author: Komali**
 
-CyberChef is a tool used to analyze, decode and encode data. When we looked at the email sample, it stated that the file was encoded in Base64. This encoding is used to trasmit binary data over systems that only support text and is used to hide malicious URLs/ scripts from security tools. 
+`CyberChef` is a tool used to analyze, decode and encode data. When we looked at the email sample, it stated that the file was encoded in Base64. This encoding is used to trasmit binary data over systems that only support text and is used to hide malicious URLs/ scripts from security tools. 
 
-After opening: https://gchq.github.io/CyberChef/, a portion of the email was pasted into the input field. The content seemed like random characters and looked like it was encoded as Base64. "From Base64" is an operation that helped decode this encoded string, so it was dragged under recipes. After clicking the button "BAKE", it decoded the encoded string to reveal a malicious link which will be discussed in detail under "RESULTS" section.
-
-(give more details and images)
-
+After opening: `https://gchq.github.io/CyberChef/`, a portion of the email was pasted into the input field. The content seemed like random characters and looked like it was encoded as Base64. `From Base64` is an operation that helped decode this encoded string, so it was dragged under recipes. After clicking the button `BAKE`, it decoded the encoded string to reveal a malicious link which will be discussed in detail under `RESULTS` section.
 
 ### 3.3 VirusTotal
 **Author: Komali**
 
-VirusTotal is a cloud-based malware analysis platform that scans and verifies if any files/URLs/IP Addressses are flagged as malicious. It is very useful for analysis as it scans these against 80+ antivirus engines and provides a detailed report. 
+`VirusTotal` is a cloud-based malware analysis platform that scans and verifies if any files/URLs/IP Addressses are flagged as malicious. It is very useful for analysis as it scans these against 80+ antivirus engines and provides a detailed report. 
 
-Indicators of Compromise (IOCs) such as IP Address, the link embedded into the encoded Base64 string were submitted to this tool. After scanning each IOC, there were 0 flags for any malicious content. However, it is important to use multiple tools to verify if any emails are malicious as there was email authenticaion failures when analyzing email headers.
+`Indicators of Compromise (IOCs)` such as IP Address, the link embedded into the encoded Base64 string were submitted to this tool. After scanning each IOC, there were 0 flags for any malicious content. However, it is important to use multiple tools to verify if any emails are malicious as there was email authenticaion failures when analyzing email headers.
 
 Multiple tools must be used together to determine if an email is malicious or not. Since this is a sample, VirusTotal did not flag any of the embedded links, but in real life, VirusTotal can be used to verify if any embedded content is malicious or not. 
 
@@ -139,14 +136,17 @@ This URL does not seem to be related to Bradesco Bank (the bank it is claiming t
 ---
 
 ## 6. Documentation
+
 `GitHub Sample`
 <img width="1047" height="688" alt="Screenshot 2026-04-22 at 10 04 58 PM" src="https://github.com/user-attachments/assets/eabf5e5e-afbf-4dad-9b83-976b374557f9" />
+
 
 `IOC 1 - Suspicious IP Address`
 <img width="550" height="128" alt="width-550" src="https://github.com/user-attachments/assets/15a8008d-87ee-49de-b8ba-e4f5d5136f83" />
 
 IP Addresses reveal the location the email originates from and gives users insight into whether you can trust this sender.
 The IP Address listed is `137.184.34.4` and when we searched up this, it traces back to a cloud server in the San Jose area called `DigitalOcean,LLC`. This is suspicious as real banks don't send emails from random cloud servers from outside their country of origin. Since this email claims to be from Bradesco Bank, a bank in Brazil, it raises a red flag that the sender is traced back to California.
+
 
 `IOC 2 - Failed Email Authentications`
 <img width="918" height="431" alt="Screenshot 2026-04-22 at 10 24 25 PM" src="https://github.com/user-attachments/assets/594e59e4-465e-4c2a-b1f5-9a6416c50d39" />
@@ -159,6 +159,7 @@ Email Authentication helps users understand and verify if they can even trust th
 
 `DMARC (Domain based Message Authentication Reporting and Conformance)` is a security protocol that uses both `SPF` and `DKIM` to verify the senders identity. Failed DMARC means this is likely a phishing attack.
 
+
 `IOC 3 - Sender Identity `
 <img width="873" height="403" alt="Screenshot 2026-04-22 at 10 25 05 PM" src="https://github.com/user-attachments/assets/1abdfd07-395c-4d9d-9fa8-e923536ca1d5" />
 
@@ -166,6 +167,7 @@ Confirming if the sender identities match is a crucial step in verifying if the 
 and the return path `Return-Path: root@ubuntu-s-1vcpu-1gb-35gb-intel-sfo3-06`.
 
 The first red flag here is that the return path does NOT match the sender domain at all. The second red flag is when we checked the official website of the back, the official domain of the bank is `@bradescobank.com` , not  `@atendimento.com.br`.
+
 
 `IOC 4 - Base64 Encoding`
 <img width="873" height="422" alt="Screenshot 2026-04-22 at 10 25 21 PM" src="https://github.com/user-attachments/assets/09afbefc-1839-44c3-9286-a23513953528" />
@@ -181,7 +183,6 @@ After decoding the encoded string by using the T `From Base64` operation,it reve
 ` <a href="https://blog1seguimentmydomaine2bra.me/">Clique aqui</a></font> `
 
 Embedded URLs are something to look out for as these can be very malicious if you accidentally open them. There is even the anchor text of `Clique aqui`, which prompts the user the click a button. 
-(Click here) , seems to be very generic and suspicious.
 
 
 `Sample Email Layout`
@@ -191,7 +192,9 @@ This sample email is what a user would potnetially see on their end of the scree
 
 
 This was the content pasted into ChatGPT to get generate this image (decoded content from the Base64 encoded string):
-`<!DOCTYPE html><html lang="en"><head>
+
+`
+<!DOCTYPE html><html lang="en"><head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><body style="background-color:rgb(241, 241, 241);">
  
  <p style="text-align:center;">
@@ -251,7 +254,8 @@ This was the content pasted into ChatGPT to get generate this image (decoded con
  </div>
  </div>
  </body>
- </html>`
+ </html>
+ `
 
  
 
