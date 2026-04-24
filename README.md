@@ -322,5 +322,5 @@ Domain scanning through VirusTotal provides critical information about hosting i
 
 ### ✒️ Authors
 - Rachael
-- David
+- David Matute-Jimenez
 - Komali
