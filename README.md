@@ -336,6 +336,6 @@ Domain scanning through VirusTotal provides critical information about hosting i
 ---
 
 ### ✒️ Authors
-- Rachael
+- Rachael Oyenola
 - David Matute-Jimenez
-- Komali
+- Komali Kollapudi
