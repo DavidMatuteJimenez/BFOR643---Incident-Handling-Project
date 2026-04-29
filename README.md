@@ -24,9 +24,6 @@ The importance of this project, particularly as it relates to the field of cyber
 ---
  
 ## 3. Methodology
-**Author: Team**
-![Uploading Image.png…]()
-
 ### 3.1 Data Sample
 **Author: Rachael**
  
