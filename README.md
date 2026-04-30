@@ -217,7 +217,7 @@ The first red flag here is that the return path does NOT match the sender domain
 `CyberChef Decoded output`
 <img width="1435" height="790" alt="Screenshot 2026-04-22 at 9 58 34 PM" src="https://github.com/user-attachments/assets/84996d9a-88d2-4ac9-bc85-75b72795aeac" />
 
-After decoding the encoded string by using the T `From Base64` operation,it revealed the malicious URL:
+After decoding the encoded string by using `From Base64` operation,it revealed the malicious URL:
 
 ` <a href="https://blog1seguimentmydomaine2bra.me/">Clique aqui</a></font> `
 
