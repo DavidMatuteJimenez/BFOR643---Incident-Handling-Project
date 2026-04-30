@@ -1,1 +1,39 @@
-content here
+# Documentation
+
+This folder contains the coursework created throughout the semester for the project " Investigating Phishing Emails through CyberChef & VirusTotal" in BFOR 643.
+
+The "README.md" file, it illustrates the development process of the project and the investigation workflow to analysis techniques and evidence collection, all of which directly support the final results.
+
+---
+
+### Project Overview & Scope
+
+- **BFOR643 - Title, Scope, and Team Members
+Defines the purpose of the project, which is to investigate a phishing email sampled from GitHub. We were able to outline the problem being addressed, identify and analyze phishing threats using CyberChef and VirusTotal.
+
+- **BFOR 643 - Overview of the Project
+Highlights the relevance of the phishing investigation, including identifying Indicators of Compromise(IOCs), decoding hidden content(CyberChef), and verifying threats(VirusTotal). It also explains how the project simulates a real-world incident response scenario in a controlled environment. Expected outcomes from this project includes improvement with threat detection skills, awareness of phishing techniques and stronger incident response practices.
+
+---
+
+### Data Analysis & Investigation Flow
+
+Explains the step-by-step analysis process, including:
+- Extracting and reviewing email headers.
+- Identifying suspicious sender details and authentication failures (SPF, DKIM, DMARC).
+- Decoding embedded content using CyberChef (e.g., Base64 decoding).
+- Extracting URLs, domains, and IP addresses.
+- Verifying IOCs using VirusTotal.
+
+This workflow demonstrates how raw email data is transformed into actionable threat intelligence and supports evidence-based conclusions.
+
+---
+
+### Project Management & Collaboration
+
+Provides a structured timeline of project milestones, including:
+- Selecting phishing datasets from GitHub.
+- Setting up the analysis environment.
+- Conducting email analysis and IOC extraction.
+- Performing threat verification using different tools.
+- Documenting findings and preparing the final report on GitHub
