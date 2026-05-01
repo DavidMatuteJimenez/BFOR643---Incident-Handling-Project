@@ -33,7 +33,18 @@ The importance of this project, particularly as it relates to the field of cyber
  
 Our project will focus on secondary data from a public GitHub repository that contains samples of phishing emails. This dataset includes realistic phishing emails with headers, embedded links, messages, and other artifacts that are commonly seen in actual phishing campaigns.
  
-Sample-1.eml is a GitHub phishing sample pretending to be from Brailizan Bank, telling its “recipient” their reward points are about to expire. We will use the dataset given and import the email samples into the analysis tools we will be using. First, we will review the email headers to detect spoofing or manipulation. Afterward, we will extract URL domains and any suspicious indicators for deeper investigation. Using the tools we selected, including VirusTotal and CyberChef, we will analyze hidden content, investigate the attacker’s infrastructure, and analyze links. The dataset used will help us fully understand the investigation process and how the phishing campaign operates.
+Sample-1.eml is a GitHub phishing sample pretending to be from Braizilian Bank, telling its “recipient” their reward points are about to expire. We will use the dataset given and import the email samples into the analysis tools we will be using. First, we will review the email headers to detect spoofing or manipulation. Afterward, we will extract URL domains and any suspicious indicators for deeper investigation. Using the tools we selected, including VirusTotal and CyberChef, we will analyze hidden content, investigate the attacker’s infrastructure, and analyze links. The dataset used will help us fully understand the investigation process and how the phishing campaign operates.
+
+
+
+
+
+
+
+
+
+
+This is a workflow that shows the incident response process for handling a potential phishing email going from detection to analysis to decision to action. When the email is received, there is an initial review to see if the email is suspicious or not (looking for any odd links, strange sender, etc). We investigate the email to check sender address and identify any links/ attachments. If no IOCs are found, the email is considered safe but if IOCs are present,we analyze these and decode any content through CyberChef. Suspicious IOCs / links are then investigated/ verified through VirusTotal. If the IOCs are benign, no action is needed but if they are malicious, the user should block the IOCs/ sender and delete the email to prevent further spread
 
 ### 3.2 CyberChef
 **Author: Komali**
