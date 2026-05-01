@@ -37,14 +37,12 @@ Sample-1.eml is a GitHub phishing sample pretending to be from Braizilian Bank, 
 
 
 
+**Author: Komali**
+
+<img width="649" height="341" alt="Screenshot 2026-05-01 at 7 57 12 PM" src="https://github.com/user-attachments/assets/bddd3cbc-a503-4c06-b3b5-760d527784b9" />
 
 
-
-
-
-
-
-This is a workflow that shows the incident response process for handling a potential phishing email going from detection to analysis to decision to action. When the email is received, there is an initial review to see if the email is suspicious or not (looking for any odd links, strange sender, etc). We investigate the email to check sender address and identify any links/ attachments. If no IOCs are found, the email is considered safe but if IOCs are present,we analyze these and decode any content through CyberChef. Suspicious IOCs / links are then investigated/ verified through VirusTotal. If the IOCs are benign, no action is needed but if they are malicious, the user should block the IOCs/ sender and delete the email to prevent further spread
+This is a workflow that shows the incident response process for handling a potential phishing email going from detection to analysis to decision to action. When the email is received, there is an initial review to see if the email is suspicious or not (looking for any odd links, strange sender, etc). We investigate the email to check sender address and identify any links/ attachments. If no IOCs are found, the email is considered safe but if IOCs are present,we analyze these and decode any content through CyberChef. Suspicious IOCs / links are then investigated and verified through VirusTotal. If the IOCs are benign, no action is needed but if they are malicious, the user should block the IOCs/ sender and delete the email to prevent further spread.
 
 ### 3.2 CyberChef
 **Author: Komali**
