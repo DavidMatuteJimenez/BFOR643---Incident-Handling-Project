@@ -53,7 +53,7 @@ VirusTotal helped us with this phishing email by:
 
 * No coding required
 * Supports multiple operations in one place
-* Handles encoded and Obfuscated Data
+* Handles encoded and hidden Data
 
 We chose CyberChef because it allows us to decode and analyze suspicious data safely without requiring knowledge of coding.
 
