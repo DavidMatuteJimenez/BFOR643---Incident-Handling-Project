@@ -39,6 +39,7 @@ Sample-1.eml is a GitHub phishing sample pretending to be from Braizilian Bank, 
 *Safe Investigation Environment 
 *Support Cybersecurity Awareness
 *Saves Time 
+
 We chose VirusTotal because it provides a safe and efficient way to analyze suspicious files through multiple security engines without exposing our systems to any risk.
 
 VirusTotal helped us with this phishing email by:
@@ -52,6 +53,7 @@ VirusTotal helped us with this phishing email by:
 *No coding required
 *Supports multiple operations in one place
 *Handles encoded and Obfuscated Data
+
 We chose CyberChef because it allows us to decode and analyze suspicious data safely without requiring knowledge of coding.
 
  CyberChef helped us with this phishing email by:
