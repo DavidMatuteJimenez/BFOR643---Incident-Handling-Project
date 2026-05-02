@@ -36,6 +36,7 @@ Our project will focus on secondary data from a public GitHub repository that co
 Sample-1.eml is a GitHub phishing sample pretending to be from Braizilian Bank, telling its “recipient” their reward points are about to expire. We will use the dataset given and import the email samples into the analysis tools we will be using. First, we will review the email headers to detect spoofing or manipulation. Afterward, we will extract URL domains and any suspicious indicators for deeper investigation. Using the tools we selected, including VirusTotal and CyberChef, we will analyze hidden content, investigate the attacker’s infrastructure, and analyze links. The dataset used will help us fully understand the investigation process and how the phishing campaign operates.
 
 **Why We Chose VirusTotal?**
+
 *Safe Investigation Environment 
 *Support Cybersecurity Awareness
 *Saves Time 
@@ -43,6 +44,7 @@ Sample-1.eml is a GitHub phishing sample pretending to be from Braizilian Bank, 
 We chose VirusTotal because it provides a safe and efficient way to analyze suspicious files through multiple security engines without exposing our systems to any risk.
 
 VirusTotal helped us with this phishing email by:
+
 *Checking malicious links safely
 *Scan files/links without opening them
 *Detect known threats instantly
@@ -50,6 +52,7 @@ VirusTotal helped us with this phishing email by:
 
 
 **Why We Chose CyberChef?**
+
 *No coding required
 *Supports multiple operations in one place
 *Handles encoded and Obfuscated Data
@@ -57,6 +60,7 @@ VirusTotal helped us with this phishing email by:
 We chose CyberChef because it allows us to decode and analyze suspicious data safely without requiring knowledge of coding.
 
  CyberChef helped us with this phishing email by:
+ 
  *Revealing hidden contents
  *Safely analyzes suspicious data
  *Exposing malicious URLS
